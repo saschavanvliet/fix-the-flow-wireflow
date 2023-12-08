@@ -1,4 +1,32 @@
-<link href="style.css"> 
-<script src="script.js"></script>
-<button onclick="MyFunction()">➕</button>
-<div id="clickbutton"></div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href = "style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <!-- De button wordt neergezet -->
+    <button>➕</button>
+    <div>Foto</div>
+<script>
+    // Dit is deel een van wanneer je op de button klikt. Als je er dus op klikt komt de div tevoorschijn.
+        var button = document.querySelector("button");
+        var element = document.querySelector("div");
+        
+        button.addEventListener("click", function() {
+          element.classList.toggle("yay");
+        });
+    
+        document.addEventListener("click", function(event) {
+  // Wanneer je buiten de div klikt, oftewel het blauw blok
+  if (!element.contains(event.target) && !button.contains(event.target)) {
+    // Als het geklikte element buiten de div en de knop ligt, wordt de class "yay" verwijderd
+    element.classList.remove("yay");
+  }
+});
+</script>
+</body>
+</html>
